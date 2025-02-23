@@ -146,7 +146,6 @@ async function detectPose() {
   }
 
   if (video.paused || video.ended) {
-    console.warn("Video is paused or ended. Stopping pose detection.");
     statusDiv.textContent = "Video paused or ended.";
     cancelAnimationFrame(animationId);
     return;
@@ -169,7 +168,6 @@ async function detectPose() {
     if (results.landmarks && results.landmarks.length > 0) {
       const bodyBoxes = calculateBodyBoundingBoxes(results.landmarks);
       if (bodyBoxes) {
-        console.log("Body Part Coordinates:", bodyBoxes);
       }
       drawResults(results.landmarks);
     } else {
@@ -194,7 +192,6 @@ function drawResults(poseLandmarks: any) {
   }
 
   // We only expect one pose in this example.
-  console.log("Pose Landmarker Results CHECK HERE:", poseLandmarks);
   const pose = poseLandmarks[0]; // Get the first pose's landmarks
 
   if (!pose || pose.length === 0) {
