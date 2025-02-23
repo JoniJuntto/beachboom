@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Soccer Goalkeeper</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div id="scene-container"></div>
+    <div class="overlay">
+      <div class="container">
+        <video id="video" width="640" height="480" autoplay playsinline></video>
+        <canvas id="output-canvas" width="640" height="480"></canvas>
+      </div>
+      <div class="controls">
+        <button id="startBtn">Start Camera</button>
+        <button id="stopBtn" disabled>Stop</button>
+      </div>
+      <div id="status" class="status">Loading model...</div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
